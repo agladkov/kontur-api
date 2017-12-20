@@ -35,11 +35,11 @@ class FocusClient(object):
         try:
             with urlopen(request, timeout=10) as rp:
                 data = rp.read()
-                data = data.decode(rp.headers.get_content_charset('UTF-8'))
                 logger.debug('Raw response: %s', data)
                 if self.raw:
                     result = data
                 else:
+                    data = data.decode(rp.headers.get_content_charset('UTF-8'))
                     result = json.loads(data)
                     logger.debug('API JSON response: %s', result)
         except HTTPError as e:
