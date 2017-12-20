@@ -3,7 +3,7 @@ from distutils.core import setup
 import kontur
 
 setup(
-    name='SKB Kontur API',
+    name='kontur-api',
     version=kontur.__version__,
     description='SKB Kontur API',
     author='Anton Gladkov',
